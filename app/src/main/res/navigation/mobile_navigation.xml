@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.dsquares.baseProject.presentation.ui.ui.home.HomeFragment"
+        android:name="com.dsquares.baseProject.presentation.ui.ui.home.HomeView"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
