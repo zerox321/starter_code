@@ -1,4 +1,4 @@
-package com.dsquares.baseProject.util
+package com.dsquares.baseProject.presentation.util
 
 
 import android.os.Bundle
@@ -9,7 +9,7 @@ import androidx.navigation.NavOptions
 import androidx.navigation.Navigator
 import androidx.navigation.fragment.findNavController
 import com.dsquares.baseProject.R
-import com.dsquares.baseProject.util.ExceptionHandling.safeTaskHandler
+import com.dsquares.baseProject.presentation.util.ExceptionHandling.safeTaskHandler
 
 
 object NavigationUtil {

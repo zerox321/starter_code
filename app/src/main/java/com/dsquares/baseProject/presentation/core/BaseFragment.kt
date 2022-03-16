@@ -11,8 +11,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.dsquares.baseProject.util.KeyboardUtil.hideKeyboard
-import com.dsquares.baseProject.util.NavigationUtil.clearNavigateStack
+import com.dsquares.baseProject.presentation.util.KeyboardUtil.hideKeyboard
+import com.dsquares.baseProject.presentation.util.NavigationUtil.clearNavigateStack
 
 
 abstract class BaseFragment<T : ViewDataBinding> constructor(

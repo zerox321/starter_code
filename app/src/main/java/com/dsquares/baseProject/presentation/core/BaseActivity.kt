@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.dsquares.baseProject.R
-import com.dsquares.baseProject.util.LangUtil.setLanguage
+import com.dsquares.baseProject.presentation.util.LangUtil.setLanguage
 
 
 abstract class BaseActivity<T : ViewDataBinding> constructor(

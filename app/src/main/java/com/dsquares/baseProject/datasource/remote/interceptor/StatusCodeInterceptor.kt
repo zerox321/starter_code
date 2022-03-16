@@ -1,7 +1,7 @@
 package com.dsquares.baseProject.datasource.remote.interceptor
 
 import android.content.Context
-import com.dsquares.baseProject.util.ActivityLauncher.launchEmptySessions
+import com.dsquares.baseProject.presentation.util.ActivityLauncher.launchEmptySessions
 import okhttp3.Interceptor
 import okhttp3.Response
 import javax.inject.Inject

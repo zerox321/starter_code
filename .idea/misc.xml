@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/layout/image_placeholder_layout.xml" value="0.234375" />
         <entry key="app/src/main/res/layout/menu_item_row.xml" value="0.221875" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.234375" />
+        <entry key="app/src/main/res/xml/remote_config_defaults.xml" value="0.25" />
       </map>
     </option>
   </component>

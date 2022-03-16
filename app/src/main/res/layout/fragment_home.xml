@@ -18,6 +18,10 @@
         <variable
             name="IsLoading"
             type="Boolean" />
+
+        <variable
+            name="IsEmpty"
+            type="Boolean" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -64,14 +68,13 @@
             app:onRefreshListener="@{() -> HomeViewActions.fetchMenuList()}"
             app:refreshing="@{IsLoading}">
 
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/menuRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:clipToPadding="true"
                 android:orientation="vertical"
                 android:scrollbars="vertical"
-                android:clipToPadding="true"
                 app:adapter="@{MenuAdapter}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/menu_item_row" />

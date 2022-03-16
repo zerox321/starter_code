@@ -15,5 +15,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(contentLayoutId = R.layou
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding { navView.setupWithNavController(navController) }
+
     }
 }

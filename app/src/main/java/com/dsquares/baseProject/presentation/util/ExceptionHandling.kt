@@ -1,4 +1,4 @@
-package com.dsquares.baseProject.util
+package com.dsquares.baseProject.presentation.util
 
 import com.google.firebase.crashlytics.ktx.crashlytics
 import com.google.firebase.ktx.Firebase
@@ -11,7 +11,6 @@ object ExceptionHandling {
     fun Throwable.getErrorBody(): String? {
         Timber.tag(tag).e(this)
         Firebase.crashlytics.recordException(this)
-
         return if (this is HttpException) response()?.errorBody()?.string() else null
     }
 

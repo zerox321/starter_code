@@ -10,7 +10,7 @@ import com.dsquares.baseProject.R
 import com.dsquares.baseProject.databinding.FragmentHomeBinding
 import com.dsquares.baseProject.presentation.core.BaseFragment
 import com.dsquares.baseProject.presentation.ui.ui.home.menuList.MenuAdapter
-import com.dsquares.baseProject.util.Toast.showToast
+import com.dsquares.baseProject.presentation.util.Toast.showToast
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 
@@ -35,15 +35,12 @@ class HomeView : BaseFragment<FragmentHomeBinding>(contentLayoutId = R.layout.fr
         super.onViewCreated(view, savedInstanceState)
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             homeViewModel.menuListResponse.collect { result ->
-                when (result) {
-                    is HomeViewStatus.Error -> context?.showToast(
-                        message = result.errorBody ?: "unknown error"
-                    )
-                    is HomeViewStatus.Success -> menuAdapter.submitList(result.data)
-                    is HomeViewStatus.EMPTY -> Unit
-                    is HomeViewStatus.Loading -> Unit
-                }
+                if (result is HomeViewStatus.Success) menuAdapter.submitList(result.data)
+                else if (result is HomeViewStatus.Error) context?.showToast(
+                    message = result.errorBody ?: "unknown error"
+                )
                 binding.isLoading = result == HomeViewStatus.Loading
+                binding.isEmpty = result == HomeViewStatus.EMPTY
             }
         }
     }

@@ -1,7 +1,7 @@
 package com.dsquares.baseProject.presentation.ui.ui.home
 
 import com.dsquares.baseProject.presentation.core.BaseViewModel
-import com.dsquares.baseProject.util.ExceptionHandling.getErrorBody
+import com.dsquares.baseProject.presentation.util.ExceptionHandling.getErrorBody
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dsquares.com.core.entities.remote.MenuItem
 import dsquares.com.core.usecase.GetAllMenus
@@ -34,8 +34,5 @@ class HomeViewModel @Inject constructor(private val menuUseCase: GetAllMenus) :
 
 
     }
-
-    init {
-        getMenuList()
-    }
+    init {getMenuList()}
 }

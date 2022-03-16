@@ -1,9 +1,9 @@
-package com.dsquares.baseProject.util
+package com.dsquares.baseProject.presentation.util
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import com.dsquares.baseProject.util.ExceptionHandling.safeTaskHandler
+import com.dsquares.baseProject.presentation.util.ExceptionHandling.safeTaskHandler
 
 object ActivityLauncher {
 

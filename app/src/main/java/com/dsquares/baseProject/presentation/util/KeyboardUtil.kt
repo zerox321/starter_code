@@ -1,4 +1,4 @@
-package com.dsquares.baseProject.util
+package com.dsquares.baseProject.presentation.util
 
 import android.app.Activity
 import android.view.View

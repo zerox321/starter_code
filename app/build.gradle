@@ -131,6 +131,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-messaging-ktx'
     implementation 'com.google.firebase:firebase-messaging-directboot:23.0.1'
+    implementation 'com.google.firebase:firebase-config-ktx'
+
 
     testImplementation 'junit:junit:4.13.2'
 
