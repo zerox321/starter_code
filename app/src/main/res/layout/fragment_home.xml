@@ -12,6 +12,10 @@
             type="com.dsquares.baseProject.presentation.ui.ui.home.HomeViewActions" />
 
         <variable
+            name="MenuAdapter"
+            type="com.dsquares.baseProject.presentation.ui.ui.home.menuList.MenuAdapter" />
+
+        <variable
             name="IsLoading"
             type="Boolean" />
     </data>
@@ -67,7 +71,10 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:scrollbars="vertical"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                android:clipToPadding="true"
+                app:adapter="@{MenuAdapter}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/menu_item_row" />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

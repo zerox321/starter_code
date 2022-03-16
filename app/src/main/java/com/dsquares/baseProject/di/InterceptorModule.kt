@@ -2,8 +2,8 @@ package com.dsquares.baseProject.di
 
 import android.content.Context
 import com.dsquares.baseProject.BuildConfig
-import com.dsquares.baseProject.data.datasource.remote.interceptor.HeaderInterceptor
-import com.dsquares.baseProject.data.datasource.remote.interceptor.StatusCodeInterceptor
+import com.dsquares.baseProject.datasource.remote.interceptor.HeaderInterceptor
+import com.dsquares.baseProject.datasource.remote.interceptor.StatusCodeInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

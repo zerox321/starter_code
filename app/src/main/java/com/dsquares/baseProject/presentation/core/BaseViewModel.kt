@@ -6,5 +6,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 abstract class BaseViewModel : ViewModel() {
-    protected fun launchTask(task: suspend () -> Unit) = viewModelScope.launch(Dispatchers.Main) { task() }
+    protected val defaultDispatcher = Dispatchers.IO
+    protected fun launchTask(task: suspend () -> Unit) = viewModelScope.launch(defaultDispatcher) { task() }
 }

@@ -1,4 +1,4 @@
-package com.dsquares.baseProject.data.entities.remote
+package dsquares.com.core.entities.remote
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

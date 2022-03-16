@@ -1,4 +1,4 @@
-package com.dsquares.baseProject.data.datasource.remote.interceptor
+package com.dsquares.baseProject.datasource.remote.interceptor
 
 import android.content.Context
 import com.dsquares.baseProject.util.ActivityLauncher.launchEmptySessions

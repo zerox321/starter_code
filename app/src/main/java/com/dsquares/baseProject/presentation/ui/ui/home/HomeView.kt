@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import com.dsquares.baseProject.R
 import com.dsquares.baseProject.databinding.FragmentHomeBinding
 import com.dsquares.baseProject.presentation.core.BaseFragment
+import com.dsquares.baseProject.presentation.ui.ui.home.menuList.MenuAdapter
 import com.dsquares.baseProject.util.Toast.showToast
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
@@ -19,13 +20,14 @@ class HomeView : BaseFragment<FragmentHomeBinding>(contentLayoutId = R.layout.fr
 
 
     private val homeViewModel by viewModels<HomeViewModel>()
-
+    private val menuAdapter by lazy { MenuAdapter() }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
         return binding {
             homeViewActions = this@HomeView
+            menuAdapter = this@HomeView.menuAdapter
         }.root
     }
 
@@ -34,11 +36,14 @@ class HomeView : BaseFragment<FragmentHomeBinding>(contentLayoutId = R.layout.fr
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             homeViewModel.menuListResponse.collect { result ->
                 when (result) {
-                    is HomeViewStatus.Error -> context?.showToast(message = result.errorBody ?: "unknown error")
-                    is HomeViewStatus.Loading -> context?.showToast(message = "Loading")
-                    is HomeViewStatus.Success -> context?.showToast(message = result.data.toString())
-                    is HomeViewStatus.EMPTY -> context?.showToast(message = "Empty")
+                    is HomeViewStatus.Error -> context?.showToast(
+                        message = result.errorBody ?: "unknown error"
+                    )
+                    is HomeViewStatus.Success -> menuAdapter.submitList(result.data)
+                    is HomeViewStatus.EMPTY -> Unit
+                    is HomeViewStatus.Loading -> Unit
                 }
+                binding.isLoading = result == HomeViewStatus.Loading
             }
         }
     }

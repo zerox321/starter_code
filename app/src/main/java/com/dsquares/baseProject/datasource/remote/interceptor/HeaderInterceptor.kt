@@ -1,4 +1,4 @@
-package com.dsquares.baseProject.data.datasource.remote.interceptor
+package com.dsquares.baseProject.datasource.remote.interceptor
 
 import okhttp3.Interceptor
 import okhttp3.Request

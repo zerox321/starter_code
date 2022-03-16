@@ -2,11 +2,12 @@ package com.dsquares.baseProject.di
 
 import android.content.Context
 import com.dsquares.baseProject.BuildConfig.baseUrl
-import com.dsquares.baseProject.data.EndPoint
-import com.dsquares.baseProject.data.EndPoint.CACHE_SIZE
-import com.dsquares.baseProject.data.datasource.remote.interceptor.HeaderInterceptor
-import com.dsquares.baseProject.data.datasource.remote.interceptor.StatusCodeInterceptor
-import com.dsquares.baseProject.data.datasource.remote.service.ApiService
+import com.dsquares.baseProject.datasource.EndPoint
+import com.dsquares.baseProject.datasource.EndPoint.CACHE_SIZE
+import com.dsquares.baseProject.datasource.remote.interceptor.HeaderInterceptor
+import com.dsquares.baseProject.datasource.remote.interceptor.StatusCodeInterceptor
+import com.dsquares.baseProject.datasource.remote.service.ApiService
+import com.dsquares.baseProject.datasource.repository.MenuRepoImp
 import com.dsquares.baseProject.di.qualifier.CoilCache
 import com.dsquares.baseProject.di.qualifier.RequestCache
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
@@ -16,6 +17,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import dsquares.com.core.usecase.GetAllMenus
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -82,6 +84,5 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
-
 
 }
