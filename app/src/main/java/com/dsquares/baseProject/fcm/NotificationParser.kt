@@ -7,8 +7,6 @@ import org.json.JSONObject
 object NotificationParser {
 
     const val typeParser = "type"
-    const val storeIdParser = "storeId"
-    const val orderIDParser = "orderID"
 
     fun Intent.getIntentExtraString(Key: String): String = if (getStringExtra(Key) == null)
         extras?.get(Key).toString()
@@ -22,12 +20,6 @@ object NotificationParser {
         ""
     }
 
-    fun String.safeToInt(): Int =
-        try {
-            toInt()
-        } catch (ex: NumberFormatException) { // handle your exception
-            0
-        }
 
 
 }

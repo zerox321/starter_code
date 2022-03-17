@@ -7,9 +7,7 @@ import com.dsquares.baseProject.fcm.NotificationChannel.buildNotificationChannel
 import com.google.firebase.messaging.FirebaseMessaging
 import timber.log.Timber
 
-@Suppress("unused")
 object NotificationsInitializer {
-    private const val topicName: String = "all_deals"
 
 
     fun Context.buildNotificationsInitializer(

@@ -7,5 +7,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">DashBoard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="update">update</string>
+    <string name="please_update_content">There is a new version of the application. We are keen to provide the best experience, please update the application</string>
+    <string name="re_login">Re Login</string>
 
 </resources>

@@ -17,15 +17,24 @@
         android:theme="@style/Theme.baseProject"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".presentation.ui.ExpiredSessionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ui.UpdatesActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ui.HomeActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize|stateHidden">
-
-
-        <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="baseProject" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
@@ -60,6 +69,9 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/primary_10" />
+        <meta-data
+            android:name="firebase_performance_logcat_enabled"
+            android:value="true" />
     </application>
 
 </manifest>

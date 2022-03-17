@@ -1,6 +1,7 @@
 package com.dsquares.baseProject.fcm
 
 
+
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
@@ -8,11 +9,8 @@ import android.content.Intent
 import androidx.core.app.NotificationCompat
 import com.dsquares.baseProject.R
 import com.dsquares.baseProject.fcm.NotificationParser.getParsingString
-import com.dsquares.baseProject.fcm.NotificationParser.orderIDParser
-import com.dsquares.baseProject.fcm.NotificationParser.storeIdParser
 import com.dsquares.baseProject.fcm.NotificationParser.typeParser
-//import com.dsquares.baseProject.presentation.ui.home.HomeActivity
-
+import com.dsquares.baseProject.presentation.ui.HomeActivity
 import org.json.JSONObject
 import timber.log.Timber
 import java.util.*
@@ -55,15 +53,12 @@ object NotificationUtils {
 
     }
 
-//    fun Context.buildIntent(data: JSONObject): Intent =
-//        Intent(this, HomeActivity::class.java).apply {
-//            Timber.e("buildIntent: %s", data)
-//
-//            putExtra(typeParser, data.getParsingString(typeParser))
-//            putExtra(orderIDParser, data.getParsingString(orderIDParser))
-//            putExtra(storeIdParser, data.getParsingString(storeIdParser))
-//            flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-//        }
+    fun Context.buildIntent(data: JSONObject): Intent =
+        Intent(this, HomeActivity::class.java).apply {
+            Timber.e("buildIntent: %s", data)
+            putExtra(typeParser, data.getParsingString(typeParser))
+            flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+        }
 
 }
 

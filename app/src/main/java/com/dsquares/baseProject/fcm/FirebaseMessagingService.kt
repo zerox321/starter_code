@@ -2,6 +2,7 @@ package com.dsquares.baseProject.fcm
 
 import android.app.NotificationManager
 import android.content.Intent
+import com.dsquares.baseProject.fcm.NotificationUtils.buildIntent
 import com.dsquares.baseProject.fcm.NotificationUtils.sendNotification
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
@@ -25,18 +26,15 @@ class FirebaseMessagingService : FirebaseMessagingService() {
 
         val data = JSONObject(remoteMessage.data as Map<*, *>)
 
-//        val intent = buildIntent(data = data)
-//
-//        val title = remoteMessage.notification?.title ?: "" //get title
-//        val message = remoteMessage.notification?.body ?: "" //get message
-//        val clickAction = remoteMessage.notification?.clickAction //get click_action
-//
-//
-//        Timber.tag(tag).e(" Title: %s", title)
-//        Timber.tag(tag).e(" Body: %s", message)
-//        Timber.tag(tag).e("Message Notification click_action: %s", clickAction)
-//
-//        sendNotification(title, message, intent)
+        val intent = buildIntent(data = data)
+        val title = remoteMessage.notification?.title ?: "" //get title
+        val message = remoteMessage.notification?.body ?: "" //get message
+        val clickAction = remoteMessage.notification?.clickAction //get click_action
+        Timber.tag(tag).e(" Title: %s", title)
+        Timber.tag(tag).e(" Body: %s", message)
+        Timber.tag(tag).e("Message Notification click_action: %s", clickAction)
+
+        sendNotification(title, message, intent)
     }
 
 
@@ -55,7 +53,6 @@ class FirebaseMessagingService : FirebaseMessagingService() {
         messageBody: String,
         intent: Intent
     ) {
-
         notificationManager.sendNotification(
             title = title,
             messageBody = messageBody,

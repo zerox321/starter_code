@@ -14,8 +14,8 @@ class StrictModeInitializer : Initializer<Unit> {
     override fun create(context: Context) {
         Timber.e("StrictModeInitializer create")
 
-//        if (!BuildConfig.DEBUG) return
-//        enableStrictMode()
+        if (!BuildConfig.DEBUG) return
+        enableStrictMode()
     }
 
     private fun enableStrictMode() {
