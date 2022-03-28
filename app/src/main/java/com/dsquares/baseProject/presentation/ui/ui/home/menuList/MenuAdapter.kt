@@ -18,6 +18,4 @@ class MenuAdapter : ListAdapter<MenuItem, MenuAdapterViewHolder>(MenuItemDiffCal
 
     override fun onBindViewHolder(holder: MenuAdapterViewHolder, position: Int) =
         holder.bind(item = getItem(position))
-
-
 }

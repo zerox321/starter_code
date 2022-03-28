@@ -10,7 +10,6 @@ class MenuAdapterViewHolder(
 
     fun bind(item: MenuItem) {
         binding.menuItem = item
-//        binding.categoryClickListener = categoryClickListener
         binding.executePendingBindings()
     }
 }
