@@ -7,16 +7,16 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.android.scopes.ActivityRetainedScoped
+import dagger.hilt.components.SingletonComponent
+import dsquares.com.core.repository.MenuRepo
+import javax.inject.Singleton
 
 @Module
-@InstallIn(ActivityComponent::class)
+@InstallIn(SingletonComponent::class)
 object RepositoryModule {
-
 
     //MenuRepo
     @Provides
-    @ActivityRetainedScoped
-    fun provideMenuRepoImp(apiService: ApiService): MenuRepoImp = MenuRepoImp(apiService = apiService)
-
-
+    @Singleton
+    fun provideMenuRepo(apiService: ApiService): MenuRepo = MenuRepoImp(apiService = apiService)
 }
